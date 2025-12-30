@@ -1,6 +1,7 @@
-import { Form, Link, useActionData } from "react-router-dom";
+import { Form, Link, useActionData, type ActionFunctionArgs } from "react-router-dom";
+import ErrorMessage from "../components/ErrorMessage";
 
-export async function action({ request }) {
+export async function action({ request } : ActionFunctionArgs) {
   // console.log('Desde action...', await request.formData());
 
   const data = Object.fromEntries(await request.formData());
@@ -23,8 +24,8 @@ export async function action({ request }) {
 };
 
 export default function NewProduct() {
-  const error = useActionData();
-  console.log(error);
+  const error = useActionData() as string;
+  // console.log(error);
 
   return (
     <>
@@ -40,6 +41,10 @@ export default function NewProduct() {
           Volver a Productos
         </Link>
       </div>
+
+      {
+        error && <ErrorMessage>{error}</ErrorMessage>
+      }
 
       <Form
         className="mt-10"
