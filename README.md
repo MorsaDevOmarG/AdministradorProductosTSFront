@@ -34,3 +34,20 @@
   - **_npm i_**
 - Axios
   - **_npm i axios_**
+
+### CORS
+
+- Por sus siglas en inglés: _Cross-Origin Resource Sharing (Compartir recursos entre diferentes orígenes), es un mecanismo de seguridad utilizado en los navegadores _web_ para controlar las solicitudes de recursos entre dominios diferentes.
+- En esencia, _CORS_ es una política de seguridad implementada en el lado del servidor que permite o deniega las solicitudes de recursos _web_ de un origen cruzado.
+- Cuado un recurso (como una fuente, una imagen o una hoja de estilos) se solicita desde un dominio o puerto diferente al del origen del recurso actual, se considera una solicitud de origen cruzado.
+- Antes de que se implementará _CORS_, los navegadores modernos restringían automáticamente las solicitudes de origen cruzado para prevenir ataques de seguridad como el secuestro de sesiones y la inyección de _scripts_ maliciosos.
+- ## Ventajas
+  - **Seguridad**
+    - _CORS_ permite a los servidores tener un contorl más granular sobre qué dominios pueden acceder a los recursos.
+    - Esto reduce la posibilidad de ataques maliciosos de origen cruzado.
+  - **Acceso controlado a recursos**
+    - _CORS_ permite a los sitios _web_ controlar qué recursos están disponibles para ser solicitados por dominios externos y qué recursos están restringidos.
+    - Esto brinda mayor contorl sobre los datos y recursos del sitio _web_.
+  - **Interoperabilidad**
+    - _CORS_ facilita el intercambio de datos y recursos entre diferentes dominios.
+    - Estos es particularmente útil en situaciones en las que una págnia _web_ necesita cargar recursos de múltiples dominios para funcionar correctamente, como los casos de uso de _API_ o la carga de fuentes externas.
