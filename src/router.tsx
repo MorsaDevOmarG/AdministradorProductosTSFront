@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Products, { loader as productsLoader } from "./views/Products";
 import NewProduct, { action as newProductAction } from "./views/NewProduct"; // action: formularios
-import EditProduct, { loader as editProductLoader } from "./views/EditProduct"; //loader = obtener datos
+import EditProduct, { loader as editProductLoader, action as editProductAction } from "./views/EditProduct"; //loader = obtener datos
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +23,8 @@ export const router = createBrowserRouter([
         // ROAD PATTERN - Resource oriented design
         path: 'productos/:id/editar',
         element: <EditProduct />,
-        loader: editProductLoader
+        loader: editProductLoader,
+        action: editProductAction
       }
     ]
   }
