@@ -5,12 +5,17 @@ import {
   useActionData,
   // useLocation,
   type ActionFunctionArgs,
+  type LoaderFunctionArgs,
 } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
 import { addProduct } from "../services/ProductService";
 
-export async function loader() {
+export async function loader({params} :   LoaderFunctionArgs) {
+  console.log('Desde loader...', params);
 
+  return {
+
+  };
 };
 
 export async function action({ request }: ActionFunctionArgs) {
