@@ -3,19 +3,29 @@ import {
   Link,
   redirect,
   useActionData,
+  useLoaderData,
   // useLocation,
   type ActionFunctionArgs,
   type LoaderFunctionArgs,
 } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
-import { addProduct } from "../services/ProductService";
+import { addProduct, getProductById } from "../services/ProductService";
+import type { Product } from "../types";
 
 export async function loader({params} :   LoaderFunctionArgs) {
-  console.log('Desde loader...', params);
+  // console.log('Desde loader...', params);
 
-  return {
+  if (params.id !== undefined) {
+    const product = await getProductById(+params.id);
+    // console.log(product);
 
-  };
+    if (!product) {
+      // throw new Response('', {status:404, statusText: 'No Encontrado'});
+      return redirect('/');
+    }
+
+    return product;
+  }
 };
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -41,6 +51,8 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function EditProduct() {
+  const product = useLoaderData() as Product;
+
   const error = useActionData() as string;
   // console.log(error);
 
@@ -74,6 +86,7 @@ export default function EditProduct() {
             placeholder="Nombre del Producto"
             name="name"
             // defaultValue={state.product.name}
+            defaultValue={product.name}
           />
         </div>
         <div className="mb-4">
@@ -87,6 +100,7 @@ export default function EditProduct() {
             placeholder="Precio Producto. ej. 200, 300"
             name="price"
             // defaultValue={state.product.price}
+            defaultValue={product.price}
           />
         </div>
         <input
