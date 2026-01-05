@@ -3,11 +3,15 @@ import {
   Link,
   redirect,
   useActionData,
-  useLocation,
+  // useLocation,
   type ActionFunctionArgs,
 } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
 import { addProduct } from "../services/ProductService";
+
+export async function loader() {
+
+};
 
 export async function action({ request }: ActionFunctionArgs) {
   // console.log('Desde action...', await request.formData());
