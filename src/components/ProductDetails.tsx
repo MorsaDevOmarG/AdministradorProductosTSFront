@@ -25,6 +25,7 @@ export async function action({ params }: ActionFunctionArgs) {
 
 export default function ProductDetails({ product }: ProductDetailsProps) {
   const navigate = useNavigate();
+  const isAvailable = product.availability;
 
   return (
     <tr className="border-b ">
@@ -35,7 +36,18 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       </td>
 
       <td className="p-3 text-lg text-gray-800">
-        {product.availability ? "Disponible" : "No Disponible"}
+        <form method="POST">
+          <button
+            type="button"
+            name="availability"
+            value={product.availability.toString()}
+            className={`${isAvailable ? 'text-black' : 'text-red-600'} rounded-lg p-2 text-xs uppercase font-bold w-full border border-blue-100 hover:cursor-pointer`}
+          >
+            {product.availability ? "Disponible" : "No Disponible"}
+          </button>
+        </form>
+
+        {/* {product.availability ? "Disponible" : "No Disponible"} */}
       </td>
 
       <td className="p-3 text-lg text-gray-800 ">
@@ -71,7 +83,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             method="POST"
             action={`productos/${product.id}/eliminar`}
             onSubmit={(e) => {
-              if (!confirm('¿Eliminar?')) {
+              if (!confirm("¿Eliminar?")) {
                 e.preventDefault();
               }
             }}
