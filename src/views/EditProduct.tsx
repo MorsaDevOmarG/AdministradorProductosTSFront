@@ -11,6 +11,7 @@ import {
 import ErrorMessage from "../components/ErrorMessage";
 import { addProduct, getProductById, updateProduct } from "../services/ProductService";
 import type { Product } from "../types";
+import ProductForm from "../components/ProductForm";
 
 export async function loader({params} :   LoaderFunctionArgs) {
   // console.log('Desde loader...', params);
@@ -87,35 +88,9 @@ export default function EditProduct() {
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
       <Form className="mt-10" method="POST">
-        <div className="mb-4">
-          <label className="text-gray-800" htmlFor="name">
-            Nombre Producto:
-          </label>
-          <input
-            id="name"
-            type="text"
-            className="mt-2 block w-full p-3 bg-gray-50"
-            placeholder="Nombre del Producto"
-            name="name"
-            // defaultValue={state.product.name}
-            defaultValue={product.name}
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="text-gray-800" htmlFor="price">
-            Precio:
-          </label>
-          <input
-            id="price"
-            type="number"
-            className="mt-2 block w-full p-3 bg-gray-50"
-            placeholder="Precio Producto. ej. 200, 300"
-            name="price"
-            // defaultValue={state.product.price}
-            defaultValue={product.price}
-          />
-        </div>
+        <ProductForm
+          product={product}
+        />
 
         <div className="mb-4">
           <label className="text-gray-800" htmlFor="availability">
