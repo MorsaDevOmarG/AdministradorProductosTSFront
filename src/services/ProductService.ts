@@ -84,7 +84,7 @@ export async function updateProduct(data : ProductData, id : Product['id']) {
 
     const NumberSchema = pipe(string(), transform(Number), number());
 
-    const result = safeParse(ProductsSchema, {
+    const result = safeParse(ProductSchema, {
       id,
       name: data.name,
       price: parse(NumberSchema, data.price),
