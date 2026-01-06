@@ -6,5 +6,5 @@ export function formatCurrency(amount: number) {
 };
 
 export function toBoolean(str: string) {
-  return str.toLocaleLowerCase() === "true"
+  return str.toLocaleLowerCase() === "true";
 };

@@ -1,4 +1,5 @@
-import { safeParse, coerce, number, parse, boolean } from "valibot";
+// import { safeParse, coerce, number, parse, boolean } from "valibot";
+import { safeParse, number, parse, boolean, pipe, string, transform } from "valibot";
 import {
   DraftProductSchema,
   ProductSchema,
@@ -79,7 +80,9 @@ export async function updateProduct(data : ProductData, id : Product['id']) {
   // console.log(id);
 
   try {
-    const NumberSchema = coerce(number(), Number);
+    // const NumberSchema = coerce(number(), Number);
+
+    const NumberSchema = pipe(string(), transform(Number), number());
 
     const result = safeParse(ProductsSchema, {
       id,
@@ -90,6 +93,12 @@ export async function updateProduct(data : ProductData, id : Product['id']) {
     });
 
     console.log(result);
+
+    if (result.success) {
+      const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`;
+
+      await axios.put(url, result.output);
+    }
 
   } catch (error) {
     console.log(error);
