@@ -37,7 +37,8 @@
 - Loaders - React Router
   - Utiliza _Loaders_ para obtener datos de una _API_, similar a _useEffect_ y colocar la respuesta en un _State_.
   - Para ello deberás crear una función y en tu _router_ decirle que función debe ejecutarse en el _loader_.
-  
+- Fecher
+  - Es para que se actualice dentro de la misma página, ejemplo: un _like_ de _facebook_.
 
 ### CORS
 
