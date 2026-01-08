@@ -61,3 +61,20 @@
 
 - _useLoaderData_ usarlo cuando quieres obtener el resultado de un _loader_.
 - _useActionData_ cuando quieras obtener el resultado de un _action_.
+
+### CHECKLIST
+
+- _Deployment proyectos con Node y React_.
+- Nuestro proyecto consta de 3 partes:
+  - _Frontend (React)_.
+  - _Backend: (Express)_.
+  - _Base de datos (PostgreSQL)_.
+- Las 3 deberán estar en un servidor que permita conexiones externas.
+- No todos los _hostings_ soportan _Node_, es necesario un _hosting_ especial como: _Railwa, fl0, Render, etc_.
+- En cuanto al _Frontend_ se puede publicar en: _Netlify_, pero otra opción es: _Vercel_.
+
+## HOSPEDAJE 
+
+- _Render (backend)_
+- _Vercel (frontend)_
+- _Base de datos ()_
