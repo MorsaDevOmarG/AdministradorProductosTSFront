@@ -52,18 +52,10 @@ export default function Products() {
               <th className="p-2">Acciones</th>
             </tr>
           </thead>
-          {
-            products.map(product => (
-              <ProductDetails
-                key={product.id}
-                product={product}
-              />
-            )
-
-            )
-            }
           <tbody>
-
+            {products.map((product) => (
+              <ProductDetails key={product.id} product={product} />
+            ))}
           </tbody>
         </table>
       </div>
