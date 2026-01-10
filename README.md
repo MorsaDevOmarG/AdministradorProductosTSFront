@@ -78,3 +78,10 @@
 - _Render (backend)_
 - _Vercel (frontend)_
 - _Base de datos ()_
+
+
+### VERCEL
+
+- Al subir el proyecto a _VERLCEL_, se creo un archivo:
+  - **_vercel.json_**
+- Se crea una configuración que viene dentro del archivo.
