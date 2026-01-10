@@ -1,4 +1,4 @@
-import { Product } from '../types';
+import type { Product } from '../types';
 
 type ProductFormProps = {
   // ?, indica que puede o no haber un producto

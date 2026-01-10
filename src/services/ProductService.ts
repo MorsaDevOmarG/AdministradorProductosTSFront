@@ -1,5 +1,6 @@
 // import { safeParse, coerce, number, parse, boolean } from "valibot";
-import { safeParse, number, parse, boolean, pipe, string, transform } from "valibot";
+// import { safeParse, number, parse, boolean, pipe, string, transform } from "valibot";
+import { safeParse, number, parse, pipe, string, transform } from "valibot";
 import {
   DraftProductSchema,
   ProductSchema,
@@ -8,7 +9,7 @@ import {
 } from "../types";
 import axios from "axios";
 import { toBoolean } from "../utils";
-import { deleteProduct } from '../../../server/src/handlers/product';
+// import { deleteProduct } from '../../../server/src/handlers/product';
 
 type ProductData = {
   [k: string]: FormDataEntryValue;
