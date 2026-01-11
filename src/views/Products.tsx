@@ -30,7 +30,7 @@ export default function Products() {
   // console.log(products);
 
   const data = useLoaderData();
-  const products = Array.isArray(data) ? data : [];
+  const products: Product[] = Array.isArray(data) ? data : [];
 
   return (
     <>
