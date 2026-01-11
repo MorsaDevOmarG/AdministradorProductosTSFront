@@ -26,8 +26,11 @@ export async function action({request} : ActionFunctionArgs) {
 };
 
 export default function Products() {
-  const products = useLoaderData() as Product[];
+  // const products = useLoaderData() as Product[];
   // console.log(products);
+
+  const data = useLoaderData();
+  const products = Array.isArray(data) ? data : [];
 
   return (
     <>
